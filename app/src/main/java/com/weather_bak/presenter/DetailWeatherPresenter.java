@@ -1,13 +1,24 @@
 package com.weather_bak.presenter;
 
+import android.content.Context;
+
+import com.weather_bak.ui.DetailWeatherActivity;
+
 /**
  * Created by roma on 15.06.15.
  */
 public class DetailWeatherPresenter {
 
-    private DetailWeatherPresenter presenter;
+    private Context context;
+    private DetailWeatherActivity view;
 
-    public void getAllWeatherInCity() {
-        presenter.getAllWeatherInCity();
+
+    public DetailWeatherPresenter(Context context, DetailWeatherActivity view) {
+        this.context = context;
+        this.view = view;
+    }
+
+    public void getAllWeatherInCity(int position) {
+
     }
 }

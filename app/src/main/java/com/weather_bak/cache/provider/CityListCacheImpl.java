@@ -26,8 +26,8 @@ public class CityListCacheImpl implements Cache<CityList> {
     }
 
     @Override
-    public String get() {
-        return preferences.getString(CITY_LIST_PREFS_KEY, null);
+    public CityList get() {
+        return serializer.deserialize(preferences.getString(CITY_LIST_PREFS_KEY, null));
     }
 
     @Override

@@ -16,6 +16,7 @@ public class WeatherTestUtil {
     public CityList createCityWeather() {
         CityList cityList = new CityList();
 
+        List<City> cities = new ArrayList<>();
 
         City city1 = new City();
         city1.setName("city 1");
@@ -32,10 +33,7 @@ public class WeatherTestUtil {
         }
 
         city1.setLastTwoYear(listDayWeather1);
-        List<City> cities1 = new ArrayList<>();
-        cities1.add(city1);
-
-        cityList.setCities(cities1);
+        cities.add(city1);
 
 
         City city2 = new City();
@@ -52,12 +50,8 @@ public class WeatherTestUtil {
             listDayWeather2.add(weather);
         }
 
-        city1.setLastTwoYear(listDayWeather2);
-        List<City> cities2 = new ArrayList<>();
-        cities2.add(city1);
-
-
-        cityList.setCities(cities2);
+        city2.setLastTwoYear(listDayWeather2);
+        cities.add(city2);
 
 
 
@@ -75,15 +69,14 @@ public class WeatherTestUtil {
             listDayWeather3.add(weather);
         }
 
-        city3.setLastTwoYear(listDayWeather2);
-        List<City> cities3 = new ArrayList<>();
-        cities3.add(city3);
+        city3.setLastTwoYear(listDayWeather3);
 
 
-        cityList.setCities(cities3);
+
+        cities.add(city3);
+        cityList.setCities(cities);
 
         return cityList;
     }
-
 
 }
