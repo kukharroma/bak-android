@@ -12,11 +12,11 @@ public class DayWeatherSerializerImpl implements Serializer<DayWeather>{
 
     @Override
     public String serialize(DayWeather dayWeather) {
-        return null;
+        return gson.toJson(dayWeather);
     }
 
     @Override
     public DayWeather deserialize(String json) {
-        return null;
+        return gson.fromJson(json, DayWeather.class);
     }
 }

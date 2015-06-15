@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Weather-Bak</string>
+    <string name="data">Дата</string>
+    <string name="temperature">Температура</string>
+    <string name="speedWind">Швидкість вітру</string>
+    <string name="precipitation">Опади</string>
+    <string name="cloudiness">Хмарність</string>
 </resources>

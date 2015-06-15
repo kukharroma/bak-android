@@ -26,8 +26,8 @@ public class DayWeatherCacheImpl implements Cache<DayWeather> {
     }
 
     @Override
-    public DayWeather get() {
-        return serializer.deserialize(preferences.getString(DAY_WEATHER_PREFS_KEY, null));
+    public String get() {
+        return preferences.getString(DAY_WEATHER_PREFS_KEY, null);
     }
 
     @Override

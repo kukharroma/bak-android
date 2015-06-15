@@ -1,4 +1,4 @@
-package com.weather_bak.cache;
+package com.weather_bak.business_logic;
 
 /**
  * Created by roma on 15.06.15.
