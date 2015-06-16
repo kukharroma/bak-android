@@ -6,6 +6,7 @@ import java.util.List;
  * Created by roma on 15.06.15.
  */
 public class City {
+
     private String name;
     private List<DayWeather> lastThreeYear;
     private List<DayWeather> lastTwoYear;

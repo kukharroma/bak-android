@@ -19,7 +19,6 @@ public class CityListCacheImpl implements Cache<CityList> {
     private static final String CITY_LIST_CACHE_PREFS_KEY = "com.weather_bak.cache.provider.CityListCacheImpl";
     private static final String CITY_LIST_PREFS_KEY = "cityList";
 
-
     public CityListCacheImpl(Context context) {
         this.context = context;
         this.preferences = context.getSharedPreferences(CITY_LIST_CACHE_PREFS_KEY, Context.MODE_PRIVATE);
