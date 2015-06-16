@@ -5,4 +5,9 @@
     <string name="speedWind">Швидкість вітру</string>
     <string name="precipitation">Опади</string>
     <string name="cloudiness">Хмарність</string>
+    <string name="future_weather">Погода на наступні 3 дні</string>
+    <string name="last_14_days">Погода за останні 2 тижні</string>
+    <string name="last_year">Погода за останні 2 тижні  рік тому</string>
+    <string name="last_two_years">Погода за останні 2 тижні два роки тому</string>
+    <string name="last_three_years">Погода за останні 2 тижні три роки тому</string>
 </resources>

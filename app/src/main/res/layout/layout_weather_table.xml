@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <TableRow
+        android:id="@+id/tr_date"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView0"
+            android:id="@+id/tv_date"
             style="@style/tvStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,11 +19,12 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/tr_temperature"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_temparature"
             style="@style/tvStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,11 +33,12 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/tr_wind_speed"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_wind_speed"
             style="@style/tvStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,11 +47,12 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/tr_precipitation"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_precipitation"
             style="@style/tvStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,11 +61,12 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/tr_cloudiness"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_cloudiness"
             style="@style/tvStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
