@@ -32,7 +32,11 @@ public class WeatherTestUtil {
             listDayWeather1.add(weather);
         }
 
+        city1.setLastFourteenDays(listDayWeather1);
+        city1.setLastOneYear(listDayWeather1);
         city1.setLastTwoYear(listDayWeather1);
+        city1.setLastThreeYear(listDayWeather1);
+
         cities.add(city1);
 
 

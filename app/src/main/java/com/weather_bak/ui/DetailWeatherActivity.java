@@ -35,6 +35,10 @@ public class DetailWeatherActivity extends Activity {
         initPresenter();
         initComponents();
         fillLastWeeksTable();
+        fillLastYearTable();
+        fillLastTwoYearTable();
+        fillLastThreeYearTable();
+        fillFutureTable();
     }
 
     private void initPresenter() {
@@ -58,7 +62,7 @@ public class DetailWeatherActivity extends Activity {
         fillWeatherTable(wtLastYear, presenter.getAllWeatherInCity(position).getLastOneYear());
     }
 
-    private void fillLasttwoYearTable() {
+    private void fillLastTwoYearTable() {
         fillWeatherTable(wtLastTwoYears, presenter.getAllWeatherInCity(position).getLastTwoYear());
     }
 
