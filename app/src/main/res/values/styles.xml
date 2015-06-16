@@ -8,6 +8,7 @@
     <style name="tvStyle">
         <item name="android:background">@drawable/cell_shape</item>
         <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 
