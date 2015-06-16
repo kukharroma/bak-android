@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.weather_bak.R;
+import com.weather_bak.business_logic.service.WeatherService;
 import com.weather_bak.model.DayWeather;
 import com.weather_bak.presenter.DetailWeatherPresenter;
 import com.weather_bak.ui.widget.WeatherTable;
@@ -71,7 +72,9 @@ public class DetailWeatherActivity extends Activity {
     }
 
     private void fillFutureTable() {
-
+        WeatherService weatherService = new WeatherService();
+        List<DayWeather> dayWeathers = weatherService.forecastWeather(presenter.getAllWeatherInCity(position));
+        fillWeatherTable(wtFutureWeather, dayWeathers);
     }
 
     private void fillWeatherTable(WeatherTable weatherTable, List<DayWeather> dayWeathers) {
