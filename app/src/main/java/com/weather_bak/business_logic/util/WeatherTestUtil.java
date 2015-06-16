@@ -6,6 +6,7 @@ import com.weather_bak.model.DayWeather;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by roma on 15.06.15.
@@ -25,10 +26,11 @@ public class WeatherTestUtil {
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
             weather.setData("25.05.15");
-            weather.setTemperature(3.5);
-            weather.setWindSpeed(2);
-            weather.setPrecipitation(0.2);
-            weather.setCloudiness(70);
+            Random random = new Random();
+            weather.setTemperature(random.nextDouble());
+            weather.setWindSpeed(random.nextDouble());
+            weather.setPrecipitation(random.nextDouble());
+            weather.setCloudiness(random.nextDouble());
             listDayWeather1.add(weather);
         }
 
@@ -47,16 +49,15 @@ public class WeatherTestUtil {
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
             weather.setData("25.05.15");
-            weather.setTemperature(3.5);
-            weather.setWindSpeed(2);
-            weather.setPrecipitation(0.2);
-            weather.setCloudiness(70);
+            weather.setTemperature(new Random(30).nextDouble());
+            weather.setWindSpeed(new Random(15).nextDouble());
+            weather.setPrecipitation(new Random(1).nextDouble());
+            weather.setCloudiness(new Random(100).nextDouble());
             listDayWeather2.add(weather);
         }
 
         city2.setLastTwoYear(listDayWeather2);
         cities.add(city2);
-
 
 
         City city3 = new City();
@@ -66,15 +67,14 @@ public class WeatherTestUtil {
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
             weather.setData("25.05.15");
-            weather.setTemperature(3.5);
-            weather.setWindSpeed(2);
-            weather.setPrecipitation(0.2);
-            weather.setCloudiness(70);
+            weather.setTemperature(new Random(30).nextDouble());
+            weather.setWindSpeed(new Random(15).nextDouble());
+            weather.setPrecipitation(new Random(1).nextDouble());
+            weather.setCloudiness(new Random(100).nextDouble());
             listDayWeather3.add(weather);
         }
 
         city3.setLastTwoYear(listDayWeather3);
-
 
 
         cities.add(city3);
