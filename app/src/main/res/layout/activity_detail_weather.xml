@@ -21,6 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/green"
                 android:text="@string/future_weather" />
 
             <com.weather_bak.ui.widget.WeatherTable
@@ -31,6 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/green"
                 android:text="@string/last_14_days" />
 
             <com.weather_bak.ui.widget.WeatherTable
@@ -41,6 +43,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/green"
                 android:text="@string/last_year" />
 
             <com.weather_bak.ui.widget.WeatherTable
@@ -51,6 +54,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/green"
                 android:text="@string/last_two_years" />
 
             <com.weather_bak.ui.widget.WeatherTable
@@ -61,6 +65,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/green"
                 android:text="@string/last_three_years" />
 
             <com.weather_bak.ui.widget.WeatherTable

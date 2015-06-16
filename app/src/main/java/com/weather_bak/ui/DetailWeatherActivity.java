@@ -79,23 +79,23 @@ public class DetailWeatherActivity extends Activity {
 
     private void fillWeatherTable(WeatherTable weatherTable, List<DayWeather> dayWeathers) {
         for (int k = 0; k < dayWeathers.size(); k++) {
-            TextView tvDate = new TextView(getApplicationContext(), null, 0, R.style.tvStyle);
+            TextView tvDate = new TextView(getApplicationContext(), null,  R.style.tvStyle);
             tvDate.setText(dayWeathers.get(k).getData());
             weatherTable.getTrDate().addView(tvDate, (k + 1));
 
-            TextView tvTemperature = new TextView(getApplicationContext(), null, 0, R.style.tvStyle);
+            TextView tvTemperature = new TextView(getApplicationContext(), null,  R.style.tvStyle);
             tvTemperature.setText("" + dayWeathers.get(k).getTemperature());
             weatherTable.getTrTemperature().addView(tvTemperature, (k + 1));
 
-            TextView tvWindSpeed = new TextView(getApplicationContext(), null, 0, R.style.tvStyle);
+            TextView tvWindSpeed = new TextView(getApplicationContext(), null,  R.style.tvStyle);
             tvWindSpeed.setText("" + dayWeathers.get(k).getWindSpeed());
             weatherTable.getTrWindSpeed().addView(tvWindSpeed, (k + 1));
 
-            TextView tvPrecipitation = new TextView(getApplicationContext(), null, 0, R.style.tvStyle);
+            TextView tvPrecipitation = new TextView(getApplicationContext(), null, R.style.tvStyle);
             tvPrecipitation.setText("" + dayWeathers.get(k).getPrecipitation());
             weatherTable.getTrPrecipitation().addView(tvPrecipitation, (k + 1));
 
-            TextView tvCloudiness = new TextView(getApplicationContext(), null, 0, R.style.tvStyle);
+            TextView tvCloudiness = new TextView(getApplicationContext(), null,  R.style.tvStyle);
             tvCloudiness.setText("" + dayWeathers.get(k).getCloudiness());
             weatherTable.getTrCloudiness().addView(tvCloudiness);
         }
