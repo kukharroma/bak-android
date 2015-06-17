@@ -24,6 +24,14 @@ public class CityListCacheImpl implements Cache<CityList> {
         this.preferences = context.getSharedPreferences(CITY_LIST_CACHE_PREFS_KEY, Context.MODE_PRIVATE);
     }
 
+    public String getString(){
+        return preferences.getString(CITY_LIST_PREFS_KEY, null);
+    }
+
+    public void setString(String str){
+        preferences.edit().putString(CITY_LIST_PREFS_KEY, str).apply();
+    }
+
     @Override
     public CityList get() {
         return serializer.deserialize(preferences.getString(CITY_LIST_PREFS_KEY, null));

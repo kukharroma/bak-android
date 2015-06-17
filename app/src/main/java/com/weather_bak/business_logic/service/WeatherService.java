@@ -3,6 +3,7 @@ package com.weather_bak.business_logic.service;
 import com.weather_bak.model.City;
 import com.weather_bak.model.DayWeather;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +34,6 @@ public class WeatherService {
 
     private List<DayWeather> futureWeather = new ArrayList<>();
 
-
     public List<DayWeather> forecastWeather(City city) {
         double tempKoef = getKoef(city, TEMPERATURE_KOEF);
         double windSpeedKoef = getKoef(city, WINDSPEED_KOEF);
@@ -43,25 +43,25 @@ public class WeatherService {
 
         if (tempKoef > 0) {
             DayWeather dayWeather1 = new DayWeather();
-            dayWeather1.setData("26.05.15");
-            dayWeather1.setTemperature(city.getLastFourteenDays().get(13).getTemperature() + tempKoef);
-            dayWeather1.setWindSpeed(city.getLastFourteenDays().get(13).getWindSpeed() + windSpeedKoef);
-            dayWeather1.setPrecipitation(city.getLastFourteenDays().get(13).getPrecipitation() - precipitationKoef);
-            dayWeather1.setCloudiness(city.getLastFourteenDays().get(13).getCloudiness() - cloudinessKoef);
+            dayWeather1.setData("15.05.15");
+            dayWeather1.setTemperature(cutDouble((city.getLastFourteenDays().get(13).getTemperature() + tempKoef), 1));
+            dayWeather1.setWindSpeed(cutDouble((city.getLastFourteenDays().get(13).getWindSpeed() + windSpeedKoef), 1));
+            dayWeather1.setPrecipitation(cutDouble((city.getLastFourteenDays().get(13).getPrecipitation() - precipitationKoef), 1));
+            dayWeather1.setCloudiness(cutDouble((city.getLastFourteenDays().get(13).getCloudiness() - cloudinessKoef), 1));
 
             DayWeather dayWeather2 = new DayWeather();
-            dayWeather2.setData("27.05.15");
-            dayWeather2.setTemperature(dayWeather1.getTemperature() + tempKoef);
-            dayWeather2.setWindSpeed(dayWeather1.getWindSpeed() + windSpeedKoef);
-            dayWeather2.setPrecipitation(dayWeather1.getPrecipitation() - precipitationKoef);
-            dayWeather2.setCloudiness(dayWeather1.getCloudiness() - cloudinessKoef);
+            dayWeather2.setData("16.05.15");
+            dayWeather2.setTemperature(cutDouble((dayWeather1.getTemperature() + tempKoef), 1));
+            dayWeather2.setWindSpeed(cutDouble((dayWeather1.getWindSpeed() + windSpeedKoef), 1));
+            dayWeather2.setPrecipitation(cutDouble((dayWeather1.getPrecipitation() - precipitationKoef), 1));
+            dayWeather2.setCloudiness(cutDouble((dayWeather1.getCloudiness() - cloudinessKoef), 1));
 
             DayWeather dayWeather3 = new DayWeather();
-            dayWeather3.setData("28.05.15");
-            dayWeather3.setTemperature(dayWeather2.getTemperature() + tempKoef);
-            dayWeather3.setWindSpeed(dayWeather2.getWindSpeed() + windSpeedKoef);
-            dayWeather3.setPrecipitation(dayWeather2.getPrecipitation() - precipitationKoef);
-            dayWeather3.setCloudiness(dayWeather2.getCloudiness() - cloudinessKoef);
+            dayWeather3.setData("17.05.15");
+            dayWeather3.setTemperature(cutDouble((dayWeather2.getTemperature() + tempKoef), 1));
+            dayWeather3.setWindSpeed(cutDouble((dayWeather2.getWindSpeed() + windSpeedKoef), 1));
+            dayWeather3.setPrecipitation(cutDouble((dayWeather2.getPrecipitation() - precipitationKoef), 1));
+            dayWeather3.setCloudiness(cutDouble((dayWeather2.getCloudiness() - cloudinessKoef), 1));
 
             futureWeather.add(dayWeather1);
             futureWeather.add(dayWeather2);
@@ -71,25 +71,25 @@ public class WeatherService {
 
             if (windSpeedKoef < 0) {
                 DayWeather dayWeather1 = new DayWeather();
-                dayWeather1.setData("26.05.15");
-                dayWeather1.setTemperature(city.getLastFourteenDays().get(13).getTemperature() + tempKoef);
-                dayWeather1.setWindSpeed(city.getLastFourteenDays().get(13).getWindSpeed() + windSpeedKoef);
-                dayWeather1.setPrecipitation(city.getLastFourteenDays().get(13).getPrecipitation() + precipitationKoef);
-                dayWeather1.setCloudiness(city.getLastFourteenDays().get(13).getCloudiness() + cloudinessKoef);
+                dayWeather1.setData("15.05.15");
+                dayWeather1.setTemperature(cutDouble((city.getLastFourteenDays().get(13).getTemperature() + tempKoef), 1));
+                dayWeather1.setWindSpeed(cutDouble((city.getLastFourteenDays().get(13).getWindSpeed() + windSpeedKoef), 1));
+                dayWeather1.setPrecipitation(cutDouble((city.getLastFourteenDays().get(13).getPrecipitation() + precipitationKoef), 1));
+                dayWeather1.setCloudiness(cutDouble((city.getLastFourteenDays().get(13).getCloudiness() + cloudinessKoef), 1));
 
                 DayWeather dayWeather2 = new DayWeather();
-                dayWeather2.setData("27.05.15");
-                dayWeather2.setTemperature(dayWeather1.getTemperature() + tempKoef);
-                dayWeather2.setWindSpeed(dayWeather1.getWindSpeed() + windSpeedKoef);
-                dayWeather2.setPrecipitation(dayWeather1.getPrecipitation() + precipitationKoef);
-                dayWeather2.setCloudiness(dayWeather1.getCloudiness() + cloudinessKoef);
+                dayWeather2.setData("16.05.15");
+                dayWeather2.setTemperature(cutDouble((dayWeather1.getTemperature() + tempKoef), 1));
+                dayWeather2.setWindSpeed(cutDouble((dayWeather1.getWindSpeed() + windSpeedKoef), 1));
+                dayWeather2.setPrecipitation(cutDouble((dayWeather1.getPrecipitation() + precipitationKoef), 1));
+                dayWeather2.setCloudiness(cutDouble((dayWeather1.getCloudiness() + cloudinessKoef), 1));
 
                 DayWeather dayWeather3 = new DayWeather();
-                dayWeather3.setData("28.05.15");
-                dayWeather3.setTemperature(dayWeather2.getTemperature() + tempKoef);
-                dayWeather3.setWindSpeed(dayWeather2.getWindSpeed() + windSpeedKoef);
-                dayWeather3.setPrecipitation(dayWeather2.getPrecipitation() + precipitationKoef);
-                dayWeather3.setCloudiness(dayWeather2.getCloudiness() + cloudinessKoef);
+                dayWeather3.setData("17.05.15");
+                dayWeather3.setTemperature(cutDouble((dayWeather2.getTemperature() + tempKoef), 1));
+                dayWeather3.setWindSpeed(cutDouble((dayWeather2.getWindSpeed() + windSpeedKoef), 1));
+                dayWeather3.setPrecipitation(cutDouble((dayWeather2.getPrecipitation() + precipitationKoef), 1));
+                dayWeather3.setCloudiness(cutDouble((dayWeather2.getCloudiness() + cloudinessKoef), 1));
 
                 futureWeather.add(dayWeather1);
                 futureWeather.add(dayWeather2);
@@ -97,25 +97,25 @@ public class WeatherService {
                 return futureWeather;
             } else {
                 DayWeather dayWeather1 = new DayWeather();
-                dayWeather1.setData("26.05.15");
-                dayWeather1.setTemperature(city.getLastFourteenDays().get(13).getTemperature() + tempKoef);
-                dayWeather1.setWindSpeed(city.getLastFourteenDays().get(13).getWindSpeed() + windSpeedKoef);
-                dayWeather1.setPrecipitation(city.getLastFourteenDays().get(13).getPrecipitation() + precipitationKoef);
-                dayWeather1.setCloudiness(city.getLastFourteenDays().get(13).getCloudiness() - cloudinessKoef);
+                dayWeather1.setData("15.05.15");
+                dayWeather1.setTemperature(cutDouble((city.getLastFourteenDays().get(13).getTemperature() + tempKoef), 1));
+                dayWeather1.setWindSpeed(cutDouble((city.getLastFourteenDays().get(13).getWindSpeed() + windSpeedKoef), 1));
+                dayWeather1.setPrecipitation(cutDouble((city.getLastFourteenDays().get(13).getPrecipitation() + precipitationKoef), 1));
+                dayWeather1.setCloudiness(cutDouble((city.getLastFourteenDays().get(13).getCloudiness() - cloudinessKoef), 1));
 
                 DayWeather dayWeather2 = new DayWeather();
-                dayWeather2.setData("27.05.15");
-                dayWeather2.setTemperature(dayWeather1.getTemperature() + tempKoef);
-                dayWeather2.setWindSpeed(dayWeather1.getWindSpeed() + windSpeedKoef);
-                dayWeather2.setPrecipitation(dayWeather1.getPrecipitation() + precipitationKoef);
-                dayWeather2.setCloudiness(dayWeather1.getCloudiness() - cloudinessKoef);
+                dayWeather2.setData("16.05.15");
+                dayWeather2.setTemperature(cutDouble((dayWeather1.getTemperature() + tempKoef), 1));
+                dayWeather2.setWindSpeed(cutDouble((dayWeather1.getWindSpeed() + windSpeedKoef), 1));
+                dayWeather2.setPrecipitation(cutDouble((dayWeather1.getPrecipitation() + precipitationKoef), 1));
+                dayWeather2.setCloudiness(cutDouble((dayWeather1.getCloudiness() - cloudinessKoef), 1));
 
                 DayWeather dayWeather3 = new DayWeather();
-                dayWeather3.setData("28.05.15");
-                dayWeather3.setTemperature(dayWeather2.getTemperature() + tempKoef);
-                dayWeather3.setWindSpeed(dayWeather2.getWindSpeed() + windSpeedKoef);
-                dayWeather3.setPrecipitation(dayWeather2.getPrecipitation() + precipitationKoef);
-                dayWeather3.setCloudiness(dayWeather2.getCloudiness() - cloudinessKoef);
+                dayWeather3.setData("17.05.15");
+                dayWeather3.setTemperature(cutDouble((dayWeather2.getTemperature() + tempKoef), 1));
+                dayWeather3.setWindSpeed(cutDouble((dayWeather2.getWindSpeed() + windSpeedKoef), 1));
+                dayWeather3.setPrecipitation(cutDouble((dayWeather2.getPrecipitation() + precipitationKoef), 1));
+                dayWeather3.setCloudiness(cutDouble((dayWeather2.getCloudiness() - cloudinessKoef), 1));
 
                 futureWeather.add(dayWeather1);
                 futureWeather.add(dayWeather2);
@@ -124,7 +124,6 @@ public class WeatherService {
             }
         }
     }
-
 
     private double getKoef(City city, int NUMBER_OF_KOEF) {
         switch (NUMBER_OF_KOEF) {
@@ -183,5 +182,12 @@ public class WeatherService {
 
     private double getCloudinessKoef(City city) {
         return 0;
+    }
+
+
+    private double cutDouble(double r, int decimalPlaces) {
+        BigDecimal bd = new BigDecimal(r);
+        bd = bd.setScale(decimalPlaces, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
     }
 }

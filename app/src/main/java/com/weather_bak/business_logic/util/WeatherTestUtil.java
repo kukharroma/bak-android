@@ -4,6 +4,7 @@ import com.weather_bak.model.City;
 import com.weather_bak.model.CityList;
 import com.weather_bak.model.DayWeather;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -25,14 +26,14 @@ public class WeatherTestUtil {
 
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
-            weather.setData("25.05.15");
-            Random random = new Random();
-            weather.setTemperature(random.nextDouble());
-            weather.setWindSpeed(random.nextDouble());
-            weather.setPrecipitation(random.nextDouble());
-            weather.setCloudiness(random.nextDouble());
+            weather.setData((k + 1) + ".05.15");
+            weather.setTemperature(cutDouble(randDouble(15.0, 28.0), 1));
+            weather.setWindSpeed(cutDouble(randDouble(1.0, 5.0), 1));
+            weather.setPrecipitation(cutDouble(randDouble(0.0, 0.3), 1));
+            weather.setCloudiness(randInt(20, 95));
             listDayWeather1.add(weather);
         }
+
 
         city1.setLastFourteenDays(listDayWeather1);
         city1.setLastOneYear(listDayWeather1);
@@ -82,5 +83,22 @@ public class WeatherTestUtil {
 
         return cityList;
     }
+
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+        return rand.nextInt((max - min) + 1) + min;
+    }
+
+    public static double randDouble(double rangeMin, double rangeMax) {
+        Random r = new Random();
+        return rangeMin + (rangeMax - rangeMin) * r.nextDouble();
+    }
+
+    private double cutDouble(double r, int decimalPlaces) {
+        BigDecimal bd = new BigDecimal(r);
+        bd = bd.setScale(decimalPlaces, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
+
 
 }
