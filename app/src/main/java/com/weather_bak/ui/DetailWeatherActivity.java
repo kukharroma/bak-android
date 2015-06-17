@@ -75,6 +75,9 @@ public class DetailWeatherActivity extends Activity {
         WeatherService weatherService = new WeatherService();
         List<DayWeather> dayWeathers = weatherService.forecastWeather(presenter.getAllWeatherInCity(position));
         fillWeatherTable(wtFutureWeather, dayWeathers);
+
+        TextView tvCityName = (TextView) findViewById(R.id.tv_city_name);
+        tvCityName.setText(presenter.getAllWeatherInCity(position).getName());
     }
 
     private void fillWeatherTable(WeatherTable weatherTable, List<DayWeather> dayWeathers) {

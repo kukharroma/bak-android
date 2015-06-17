@@ -142,28 +142,33 @@ public class WeatherService {
 
     private double getTempKoef(City city) {
 
+        sumFourTeenDays = 0;
+        sumLastOneYear = 0;
+        sumLastTwoYear = 0;
+        sumLastThreeYear = 0;
+
         for (DayWeather weather : city.getLastFourteenDays()) {
-            sumFourTeenDays = +weather.getTemperature();
+            sumFourTeenDays = sumFourTeenDays+weather.getTemperature();
         }
         averageFourTeenDays = sumFourTeenDays / city.getLastFourteenDays().size();
         koefFourTeenDays = (city.getLastFourteenDays().get(13).getTemperature() - city.getLastFourteenDays().get(0).getTemperature()) / averageFourTeenDays;
 
 
         for (DayWeather weather : city.getLastOneYear()) {
-            sumLastOneYear = +weather.getTemperature();
+            sumLastOneYear =sumLastOneYear +weather.getTemperature();
         }
         averageLastOneYear = sumLastOneYear / city.getLastOneYear().size();
         koefLastOneYear = (city.getLastOneYear().get(13).getTemperature() - city.getLastOneYear().get(0).getTemperature()) / averageLastOneYear;
 
 
         for (DayWeather weather : city.getLastTwoYear()) {
-            sumLastTwoYear = +weather.getTemperature();
+            sumLastTwoYear = sumLastTwoYear+weather.getTemperature();
         }
         averageLastTwoYear = sumLastTwoYear / city.getLastTwoYear().size();
         koefLastTwoYear = (city.getLastTwoYear().get(13).getTemperature() - city.getLastTwoYear().get(0).getTemperature()) / averageLastTwoYear;
 
         for (DayWeather weather : city.getLastThreeYear()) {
-            sumLastThreeYear = +weather.getTemperature();
+            sumLastThreeYear = sumLastThreeYear+weather.getTemperature();
         }
         averageLastThreeYear = sumLastThreeYear / city.getLastThreeYear().size();
         koefLastThreeYear = (city.getLastThreeYear().get(13).getTemperature() - city.getLastThreeYear().get(0).getTemperature()) / averageLastThreeYear;
@@ -173,15 +178,111 @@ public class WeatherService {
     }
 
     private double getWindSpeedKoef(City city) {
-        return 0;
+        sumFourTeenDays = 0;
+        sumLastOneYear = 0;
+        sumLastTwoYear = 0;
+        sumLastThreeYear = 0;
+
+        for (DayWeather weather : city.getLastFourteenDays()) {
+            sumFourTeenDays =sumFourTeenDays +weather.getWindSpeed();
+        }
+        averageFourTeenDays = sumFourTeenDays / city.getLastFourteenDays().size();
+        koefFourTeenDays = (city.getLastFourteenDays().get(13).getWindSpeed() - city.getLastFourteenDays().get(0).getWindSpeed()) / averageFourTeenDays;
+
+
+        for (DayWeather weather : city.getLastOneYear()) {
+            sumLastOneYear =sumLastOneYear +weather.getWindSpeed();
+        }
+        averageLastOneYear = sumLastOneYear / city.getLastOneYear().size();
+        koefLastOneYear = (city.getLastOneYear().get(13).getWindSpeed() - city.getLastOneYear().get(0).getWindSpeed()) / averageLastOneYear;
+
+
+        for (DayWeather weather : city.getLastTwoYear()) {
+            sumLastTwoYear =sumLastTwoYear +weather.getWindSpeed();
+        }
+        averageLastTwoYear = sumLastTwoYear / city.getLastTwoYear().size();
+        koefLastTwoYear = (city.getLastTwoYear().get(13).getWindSpeed() - city.getLastTwoYear().get(0).getWindSpeed()) / averageLastTwoYear;
+
+        for (DayWeather weather : city.getLastThreeYear()) {
+            sumLastThreeYear =sumLastThreeYear +weather.getWindSpeed();
+        }
+        averageLastThreeYear = sumLastThreeYear / city.getLastThreeYear().size();
+        koefLastThreeYear = (city.getLastThreeYear().get(13).getWindSpeed() - city.getLastThreeYear().get(0).getWindSpeed()) / averageLastThreeYear;
+
+
+        return (koefFourTeenDays + koefLastOneYear + koefLastTwoYear + koefLastThreeYear) / 4;
     }
 
     private double getPrecipitationKoef(City city) {
-        return 0;
+        sumFourTeenDays = 0;
+        sumLastOneYear = 0;
+        sumLastTwoYear = 0;
+        sumLastThreeYear = 0;
+
+        for (DayWeather weather : city.getLastFourteenDays()) {
+            sumFourTeenDays = sumFourTeenDays + weather.getPrecipitation();
+        }
+        averageFourTeenDays = sumFourTeenDays / city.getLastFourteenDays().size();
+        koefFourTeenDays = (city.getLastFourteenDays().get(13).getPrecipitation() - city.getLastFourteenDays().get(0).getPrecipitation()) / averageFourTeenDays;
+
+
+        for (DayWeather weather : city.getLastOneYear()) {
+            sumLastOneYear = sumLastOneYear + weather.getPrecipitation();
+        }
+        averageLastOneYear = sumLastOneYear / city.getLastOneYear().size();
+        koefLastOneYear = (city.getLastOneYear().get(13).getPrecipitation() - city.getLastOneYear().get(0).getPrecipitation()) / averageLastOneYear;
+
+
+        for (DayWeather weather : city.getLastTwoYear()) {
+            sumLastTwoYear = sumLastTwoYear+weather.getPrecipitation();
+        }
+        averageLastTwoYear = sumLastTwoYear / city.getLastTwoYear().size();
+        koefLastTwoYear = (city.getLastTwoYear().get(13).getPrecipitation() - city.getLastTwoYear().get(0).getPrecipitation()) / averageLastTwoYear;
+
+        for (DayWeather weather : city.getLastThreeYear()) {
+            sumLastThreeYear = sumLastThreeYear+weather.getPrecipitation();
+        }
+        averageLastThreeYear = sumLastThreeYear / city.getLastThreeYear().size();
+        koefLastThreeYear = (city.getLastThreeYear().get(13).getPrecipitation() - city.getLastThreeYear().get(0).getPrecipitation()) / averageLastThreeYear;
+
+
+        return (koefFourTeenDays + koefLastOneYear + koefLastTwoYear + koefLastThreeYear) / 4;
     }
 
     private double getCloudinessKoef(City city) {
-        return 0;
+        sumFourTeenDays = 0;
+        sumLastOneYear = 0;
+        sumLastTwoYear = 0;
+        sumLastThreeYear = 0;
+
+        for (DayWeather weather : city.getLastFourteenDays()) {
+            sumFourTeenDays = sumFourTeenDays+weather.getCloudiness();
+        }
+        averageFourTeenDays = sumFourTeenDays / city.getLastFourteenDays().size();
+        koefFourTeenDays = (city.getLastFourteenDays().get(13).getCloudiness() - city.getLastFourteenDays().get(0).getCloudiness()) / averageFourTeenDays;
+
+
+        for (DayWeather weather : city.getLastOneYear()) {
+            sumLastOneYear =sumLastOneYear +weather.getCloudiness();
+        }
+        averageLastOneYear = sumLastOneYear / city.getLastOneYear().size();
+        koefLastOneYear = (city.getLastOneYear().get(13).getCloudiness() - city.getLastOneYear().get(0).getCloudiness()) / averageLastOneYear;
+
+
+        for (DayWeather weather : city.getLastTwoYear()) {
+            sumLastTwoYear =sumLastTwoYear +weather.getCloudiness();
+        }
+        averageLastTwoYear = sumLastTwoYear / city.getLastTwoYear().size();
+        koefLastTwoYear = (city.getLastTwoYear().get(13).getCloudiness() - city.getLastTwoYear().get(0).getCloudiness()) / averageLastTwoYear;
+
+        for (DayWeather weather : city.getLastThreeYear()) {
+            sumLastThreeYear =sumLastThreeYear +weather.getCloudiness();
+        }
+        averageLastThreeYear = sumLastThreeYear / city.getLastThreeYear().size();
+        koefLastThreeYear = (city.getLastThreeYear().get(13).getCloudiness() - city.getLastThreeYear().get(0).getCloudiness()) / averageLastThreeYear;
+
+
+        return (koefFourTeenDays + koefLastOneYear + koefLastTwoYear + koefLastThreeYear) / 4;
     }
 
 

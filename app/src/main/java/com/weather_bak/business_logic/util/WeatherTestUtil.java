@@ -21,9 +21,10 @@ public class WeatherTestUtil {
         List<City> cities = new ArrayList<>();
 
         City city1 = new City();
-        city1.setName("city 1");
-        List<DayWeather> listDayWeather1 = new ArrayList<>();
+        city1.setName("Kyiv");
 
+
+        List<DayWeather> listDayWeather1 = new ArrayList<>();
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
             weather.setData((k + 1) + ".05.15");
@@ -33,27 +34,60 @@ public class WeatherTestUtil {
             weather.setCloudiness(randInt(20, 95));
             listDayWeather1.add(weather);
         }
-
-
         city1.setLastFourteenDays(listDayWeather1);
-        city1.setLastOneYear(listDayWeather1);
-        city1.setLastTwoYear(listDayWeather1);
-        city1.setLastThreeYear(listDayWeather1);
+
+
+        List<DayWeather> listDayWeather2 = new ArrayList<>();
+        for (int k = 0; k < 14; k++) {
+            DayWeather weather = new DayWeather();
+            weather.setData((k + 1) + ".05.14");
+            weather.setTemperature(cutDouble(randDouble(15.0, 28.0), 1));
+            weather.setWindSpeed(cutDouble(randDouble(1.0, 5.0), 1));
+            weather.setPrecipitation(cutDouble(randDouble(0.0, 0.3), 1));
+            weather.setCloudiness(randInt(20, 95));
+            listDayWeather2.add(weather);
+        }
+        city1.setLastOneYear(listDayWeather2);
+
+
+        List<DayWeather> listDayWeather3 = new ArrayList<>();
+        for (int k = 0; k < 14; k++) {
+            DayWeather weather = new DayWeather();
+            weather.setData((k + 1) + ".05.13");
+            weather.setTemperature(cutDouble(randDouble(15.0, 28.0), 1));
+            weather.setWindSpeed(cutDouble(randDouble(1.0, 5.0), 1));
+            weather.setPrecipitation(cutDouble(randDouble(0.0, 0.3), 1));
+            weather.setCloudiness(randInt(20, 95));
+            listDayWeather3.add(weather);
+        }
+        city1.setLastTwoYear(listDayWeather3);
+
+        List<DayWeather> listDayWeather4 = new ArrayList<>();
+        for (int k = 0; k < 14; k++) {
+            DayWeather weather = new DayWeather();
+            weather.setData((k + 1) + ".05.13");
+            weather.setTemperature(cutDouble(randDouble(15.0, 28.0), 1));
+            weather.setWindSpeed(cutDouble(randDouble(1.0, 5.0), 1));
+            weather.setPrecipitation(cutDouble(randDouble(0.0, 0.3), 1));
+            weather.setCloudiness(randInt(20, 95));
+            listDayWeather4.add(weather);
+        }
+        city1.setLastThreeYear(listDayWeather4);
 
         cities.add(city1);
 
 
         City city2 = new City();
-        city2.setName("city 2");
-        List<DayWeather> listDayWeather2 = new ArrayList<>();
+        city2.setName("Lviv");
+        listDayWeather2 = new ArrayList<>();
 
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
-            weather.setData("25.05.15");
-            weather.setTemperature(new Random(30).nextDouble());
-            weather.setWindSpeed(new Random(15).nextDouble());
-            weather.setPrecipitation(new Random(1).nextDouble());
-            weather.setCloudiness(new Random(100).nextDouble());
+            weather.setData((k + 1) + ".05.15");
+            weather.setTemperature(cutDouble(randDouble(15.0, 28.0), 1));
+            weather.setWindSpeed(cutDouble(randDouble(1.0, 5.0), 1));
+            weather.setPrecipitation(cutDouble(randDouble(0.0, 0.3), 1));
+            weather.setCloudiness(randInt(20, 95));
             listDayWeather2.add(weather);
         }
 
@@ -63,15 +97,16 @@ public class WeatherTestUtil {
 
         City city3 = new City();
         city3.setName("city 3");
-        List<DayWeather> listDayWeather3 = new ArrayList<>();
+         listDayWeather3 = new ArrayList<>();
 
         for (int k = 0; k < 14; k++) {
             DayWeather weather = new DayWeather();
             weather.setData("25.05.15");
-            weather.setTemperature(new Random(30).nextDouble());
-            weather.setWindSpeed(new Random(15).nextDouble());
-            weather.setPrecipitation(new Random(1).nextDouble());
-            weather.setCloudiness(new Random(100).nextDouble());
+            weather.setData((k + 1) + ".05.15");
+            weather.setTemperature(cutDouble(randDouble(15.0, 28.0), 1));
+            weather.setWindSpeed(cutDouble(randDouble(1.0, 5.0), 1));
+            weather.setPrecipitation(cutDouble(randDouble(0.0, 0.3), 1));
+            weather.setCloudiness(randInt(20, 95));
             listDayWeather3.add(weather);
         }
 
