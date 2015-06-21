@@ -10,4 +10,14 @@
     <string name="last_year">Погода за останні 2 тижні  рік тому</string>
     <string name="last_two_years">Погода за останні 2 тижні два роки тому</string>
     <string name="last_three_years">Погода за останні 2 тижні три роки тому</string>
+
+    <string-array name="cities_list">
+        <item>Lviv</item>
+        <item>Paris</item>
+        <item>Kyiv</item>
+        <item>Vinnitsa</item>
+        <item>Jmerinka</item>
+        <item>Odessa</item>
+        <item>Berlin</item>
+    </string-array>
 </resources>

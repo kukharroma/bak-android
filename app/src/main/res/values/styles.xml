@@ -11,5 +11,11 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
+    <style name="citiesList">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textAppearanceListItem">@color/white</item>
+        <item name="android:background">@color/blue</item>
+    </style>
+
 
 </resources>

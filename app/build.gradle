@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 21
     buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.weather_bak"
         minSdkVersion 21
-        targetSdkVersion 22
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -22,5 +22,5 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.google.code.gson:gson:2.3.1'
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
 }

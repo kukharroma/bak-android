@@ -37,7 +37,7 @@ public class CitiesListActivity extends Activity {
     }
 
     private void fillListView() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, presenter.getCitiesName());
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.cities_list));
         lvCities.setAdapter(adapter);
         lvCities.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

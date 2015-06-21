@@ -5,8 +5,10 @@
     android:orientation="vertical">
 
     <ListView
+        style="@style/citiesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lv_cities"
+        android:background="@color/blue"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
